@@ -1,0 +1,24 @@
+{
+  "name": "contest-tracker",
+  "version": "1.0.0",
+  "description": "\"# contest-tracker\"",
+  "main": "index.js",
+  "dependencies": {
+    "express": "^4.17.1"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node index.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ashwinbanwari/contest-tracker.git"
+  },
+  "author": "Ashwin Banwari",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/ashwinbanwari/contest-tracker/issues"
+  },
+  "homepage": "https://github.com/ashwinbanwari/contest-tracker#readme"
+}
