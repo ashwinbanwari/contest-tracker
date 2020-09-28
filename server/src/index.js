@@ -2,8 +2,7 @@ const express = require('express');
 const app = express();
 const codeforces = require('./codeforces');
 
-const supported = new Map();
-supported.set('cf', codeforces);
+const supported = new Map([['cf', codeforces]]);
 app.get('/api/contests', async (req, res) => {
     promises = [];
     supported.forEach((value, key) => {
