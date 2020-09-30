@@ -18,7 +18,7 @@ async function getData(numTime) {
     }
     return results;
 }
-async function getRawData(numTime){
+function getRawData(numTime){
     return new Promise(function(resolve, reject) {
         const req = https.request(options, (res) => {
             // reject on bad status

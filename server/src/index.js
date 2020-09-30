@@ -6,7 +6,7 @@ const supported = new Map([['cf', codeforces]]);
 app.get('/api/contests', async (req, res) => {
     promises = [];
     supported.forEach((value, key) => {
-        const data = value(5);
+        const data = value();
         promises.push(data);
     });
     body = "";
