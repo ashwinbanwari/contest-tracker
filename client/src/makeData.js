@@ -1,4 +1,7 @@
-import namor from 'namor'
+
+
+var data = ""
+var counter = 0
 
 const range = len => {
   const arr = []
@@ -8,29 +11,32 @@ const range = len => {
   return arr
 }
 
-const newPerson = () => {
-  const statusChance = Math.random()
+const newContest = () => {
+  
   return {
-    firstName: namor.generate({ words: 1, numbers: 0 }),
-    lastName: namor.generate({ words: 1, numbers: 0 }),
-    age: Math.floor(Math.random() * 30),
-    visits: Math.floor(Math.random() * 100),
-    progress: Math.floor(Math.random() * 100),
-    status:
-      statusChance > 0.66
-        ? 'relationship'
-        : statusChance > 0.33
-        ? 'complicated'
-        : 'single',
+    name: data[counter].name,
+    starttime: data[counter].starttime,
   }
 }
 
+async function getData(){
+    return await fetch('localhost:4000/api/contests',
+    {
+    	method: "GET",
+        headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+    })
+  }
+
 export default function makeData(...lens) {
+  data = getData()
   const makeDataLevel = (depth = 0) => {
     const len = lens[depth]
     return range(len).map(d => {
       return {
-        ...newPerson(),
+        ...newContest(),
         subRows: lens[depth + 1] ? makeDataLevel(depth + 1) : undefined,
       }
     })
